@@ -5,11 +5,11 @@ server:
     include-message: always
 spring:
   application:
-    name: random-user
+    name: cat-facts
   boot:
     admin:
       client:
-        url: http://127.0.0.1:8080
+        url: http://127.0.0.1:8090/admin
   output:
     ansi:
       enabled: always
@@ -37,9 +37,8 @@ logging:
     web: info
     com:
       github:
-        agify:
-          controller: info
-          service: info
+        catfacts:
+          facts: info
   logback:
     rollingpolicy:
       max-file-size: 10MB
@@ -49,3 +48,6 @@ logging:
     name: logs/${spring.application.name}.log
 
 http-exchange-repository-capacity: 1000
+springdoc:
+  swagger-ui:
+    path: /api/cat-facts/swagger-ui.html
